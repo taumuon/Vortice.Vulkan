@@ -25,9 +25,13 @@
     <PatcherExecutable>$(BinDir)\$(Configuration)\Patch\netcoreapp3.1\Patch.dll</PatcherExecutable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>D:\git\taumuon\TexturedCube-Vortice2\ext\Vortice.Vulkan\bin\Debug\Vortice.Vulkan</OutputPath>
+  </PropertyGroup>
+
   <Target Name="PathDll" AfterTargets="Build">
     <Message Text="Patch dll." />
-    <Exec Command='dotnet "$(PatcherExecutable)" --input "$(TargetPath)"' />
+    <Exec Command="dotnet &quot;$(PatcherExecutable)&quot; --input &quot;$(TargetPath)&quot;" />
   </Target>
 
 </Project>

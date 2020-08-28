@@ -481,7 +481,7 @@ namespace Vortice.Vulkan
         {
             public IntPtr LoadNativeLibrary(string libraryName)
             {
-                dlerror();
+                // dlerror();
                 IntPtr handle = dlopen(libraryName, RTLD_NOW);
                 if (handle == IntPtr.Zero && !Path.IsPathRooted(libraryName))
                 {
